@@ -826,14 +826,14 @@ footer {
   transition: opacity 0.22s ease, transform 0.22s ease;
 }
 
-/* ============ WRITERS — minimal colophon ============ */
+/* ============ WRITERS — centered cards ============ */
 .writers-block {
   padding: 90px 0 100px;
   border-top: 1px solid var(--rule);
 }
 .writers-head {
   padding-bottom: 20px;
-  margin-bottom: 48px;
+  margin-bottom: 72px;
   border-bottom: 1px solid var(--rule);
 }
 .writers-head h2 {
@@ -846,39 +846,38 @@ footer {
 }
 .writers-grid {
   display: grid;
-  grid-template-columns: 1fr 1px 1fr;
-  gap: 120px;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: stretch;
 }
 .writer {
-  display: grid;
-  grid-template-columns: 180px 240px;
-  gap: 28px;
-  align-items: start;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 .writer-photo {
-  width: 180px;
-  aspect-ratio: auto;
-  display: block;
+  width: 220px;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
   border-top: 3px solid var(--oxblood);
+  display: block;
+  margin-bottom: 36px;
 }
 .writer-photo img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
   display: block;
-}
-.writers-grid .divider {
-  width: 1px;
-  background: var(--rule);
-  align-self: stretch;
 }
 .writer h3 {
   font-family: 'Spectral', serif;
   font-weight: 400;
   font-size: 38px;
-  line-height: 1.05;
+  line-height: 1;
   letter-spacing: -0.02em;
   color: var(--ink);
-  margin-bottom: 10px;
+  margin-bottom: 14px;
 }
 .writer-role {
   font-family: 'Inter Tight', sans-serif;
@@ -887,19 +886,21 @@ footer {
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--oxblood);
-  margin-bottom: 22px;
+  margin-bottom: 26px;
 }
 .writer-bio {
   font-family: 'Spectral', serif;
   font-weight: 300;
   font-size: 17px;
-  line-height: 1.55;
+  line-height: 1.6;
   color: var(--ink-soft);
-  margin-bottom: 28px;
+  max-width: 320px;
+  margin-bottom: 32px;
 }
 .writer-archive {
+  margin-top: auto;
   font-family: 'Inter Tight', sans-serif;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -934,26 +935,11 @@ footer {
 
   /* Writers: stack vertically */
   .writers-block { padding: 60px 0 70px; }
-  .writers-head { margin-bottom: 36px; }
-  .writers-grid { grid-template-columns: 1fr; gap: 0; }
-  .writers-grid .divider { display: none; }
-  .writer {
-    grid-template-columns: 1fr;
-    gap: 0;
-    padding: 40px 0;
-    text-align: center;
-  }
-  .writer:first-of-type { border-bottom: 1px solid var(--rule); }
-  .writer-photo {
-    width: 140px;
-    margin: 0 auto 24px;
-  }
-  .writer h3 { font-size: 28px; }
-  .writer-bio {
-    max-width: 400px;
-    margin: 0 auto 20px;
-    font-size: 15px;
-  }
+  .writers-head { margin-bottom: 48px; }
+  .writers-grid { grid-template-columns: 1fr; gap: 48px; }
+  .writer-photo { width: 180px; }
+  .writer h3 { font-size: 32px; }
+  .writer-bio { font-size: 16px; }
 }
 
 /* Mobile */
@@ -1000,13 +986,13 @@ footer {
 
   /* Writers */
   .writers-block { padding: 48px 0 56px; }
-  .writers-head { margin-bottom: 28px; padding-bottom: 12px; }
+  .writers-head { margin-bottom: 36px; padding-bottom: 12px; }
   .writers-head h2 { font-size: 12px; }
-  .writer { padding: 32px 0; }
-  .writer-photo { width: 120px; margin-bottom: 20px; }
-  .writer h3 { font-size: 24px; margin-bottom: 6px; }
-  .writer-role { font-size: 9px; margin-bottom: 16px; }
-  .writer-bio { font-size: 14px; margin-bottom: 16px; }
+  .writers-grid { gap: 40px; }
+  .writer-photo { width: 160px; }
+  .writer h3 { font-size: 26px; margin-bottom: 10px; }
+  .writer-role { font-size: 9px; margin-bottom: 18px; }
+  .writer-bio { font-size: 14px; max-width: 280px; }
   .writer-archive { font-size: 10px; }
 
   /* Footer */
@@ -1216,24 +1202,19 @@ footer {
         <div class="writer-photo">
           <img src="david-duotone.png" alt="David Richter">
         </div>
-        <div class="writer-info">
-          <h3>David<br>Richter</h3>
-          <div class="writer-role">Partner · Litigation</div>
-          <p class="writer-bio">Commercial disputes, appellate advocacy, and the discipline of strategic restraint. Fifteen years representing clients in New Mexico state and federal courts.</p>
-          <a href="#latest" class="writer-archive">23 essays →</a>
-        </div>
+        <h3>David Richter</h3>
+        <div class="writer-role">Partner · Litigation</div>
+        <p class="writer-bio">Commercial disputes, appellate advocacy, and the discipline of strategic restraint. Fifteen years representing clients in New Mexico state and federal courts.</p>
+        <a href="#latest" class="writer-archive">23 essays →</a>
       </article>
-      <div class="divider"></div>
       <article class="writer">
         <div class="writer-photo">
           <img src="jeremy-duotone.png" alt="Jeremy Jones">
         </div>
-        <div class="writer-info">
-          <h3>Jeremy<br>Jones</h3>
-          <div class="writer-role">Partner · Transactional</div>
-          <p class="writer-bio">Transactional counsel for closely-held businesses. Entity formation, operating agreements, and the contractual architecture that precedes growth.</p>
-          <a href="#latest" class="writer-archive">18 essays →</a>
-        </div>
+        <h3>Jeremy Jones</h3>
+        <div class="writer-role">Partner · Transactional</div>
+        <p class="writer-bio">Transactional counsel for closely-held businesses. Entity formation, operating agreements, and the contractual architecture that precedes growth.</p>
+        <a href="#latest" class="writer-archive">18 essays →</a>
       </article>
     </div>
   </div>
