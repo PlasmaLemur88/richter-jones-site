@@ -1,0 +1,48 @@
+
+  const list = document.getElementById('essayList');
+  const preview = document.getElementById('preview');
+  if (!list || !preview) return;
+
+  const catEl = preview.querySelector('.preview-cat');
+  const titleEl = preview.querySelector('.preview-title');
+  const dekEl = preview.querySelector('.preview-dek');
+  const metaEl = preview.querySelector('.preview-meta');
+
+  let current = 0;
+
+  function render(idx) {
+    if (idx === current) return;
+    const d = essays[idx];
+    preview.classList.add('swap');
+    setTimeout(() => {
+      catEl.textContent = d.cat;
+      titleEl.textContent = d.title;
+      dekEl.textContent = d.dek;
+      metaEl.innerHTML =
+        '<span class="preview-author">' + d.author + '</span>' +
+        '<span class="preview-dot"></span>' +
+        '<span>' + d.read + '</span>' +
+        '<span class="preview-dot"></span>' +
+        '<span>' + d.date + '</span>';
+      preview.classList.remove('swap');
+    }, 180);
+    current = idx;
+  }
+
+  list.querySelectorAll('li').forEach((li) => {
+    const idx = parseInt(li.dataset.idx, 10);
+    const activate = () => {
+      list.querySelectorAll('li').forEach(x => x.classList.remove('active'));
+      li.classList.add('active');
+      render(idx);
+    };
+    li.addEventListener('mouseenter', activate);
+    li.addEventListener('focus', activate);
+    li.addEventListener('click', activate);
+    li.tabIndex = 0;
+  });
+})();
+</script>
+
+</body>
+</html>
