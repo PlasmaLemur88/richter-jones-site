@@ -846,73 +846,67 @@ footer {
 }
 .writers-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0;
+  grid-template-columns: 1fr 1px 1fr;
+  gap: 120px;
 }
 .writer {
   display: grid;
-  grid-template-columns: 200px 1fr;
-  gap: 36px;
-  padding: 48px;
+  grid-template-columns: 180px 240px;
+  gap: 28px;
   align-items: start;
 }
-.writer:first-child {
-  border-right: 1px solid var(--rule);
-}
 .writer-photo {
-  width: 200px;
-  height: 260px;
-  overflow: hidden;
-  filter: grayscale(100%) contrast(1.1);
-  transition: filter 0.4s ease;
-}
-.writer:hover .writer-photo {
-  filter: grayscale(0%) contrast(1);
+  width: 180px;
+  aspect-ratio: auto;
+  display: block;
+  border-top: 3px solid var(--oxblood);
 }
 .writer-photo img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
+  display: block;
 }
-.writer-info {
-  padding-top: 8px;
+.writers-grid .divider {
+  width: 1px;
+  background: var(--rule);
+  align-self: stretch;
 }
 .writer h3 {
   font-family: 'Spectral', serif;
   font-weight: 400;
-  font-size: 32px;
-  line-height: 1.1;
+  font-size: 38px;
+  line-height: 1.05;
   letter-spacing: -0.02em;
   color: var(--ink);
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 .writer-role {
   font-family: 'Inter Tight', sans-serif;
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--oxblood);
-  margin-bottom: 20px;
+  margin-bottom: 22px;
 }
 .writer-bio {
   font-family: 'Spectral', serif;
   font-weight: 300;
   font-size: 17px;
-  line-height: 1.6;
+  line-height: 1.55;
   color: var(--ink-soft);
-  margin-bottom: 24px;
+  margin-bottom: 28px;
 }
 .writer-archive {
   font-family: 'Inter Tight', sans-serif;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 600;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--ink);
   text-decoration: none;
-  border-bottom: 1px solid var(--ink);
-  padding-bottom: 2px;
+  border-bottom: 1.5px solid var(--ink);
+  padding-bottom: 3px;
   transition: color 0.2s, border-color 0.2s;
 }
 .writer-archive:hover {
@@ -938,23 +932,22 @@ footer {
   .essay-list li .row-meta { font-size: 10px; }
   .essay-list li.active { padding-left: 12px; }
 
-  /* Counsel: stack vertically */
+  /* Writers: stack vertically */
   .writers-block { padding: 60px 0 70px; }
   .writers-head { margin-bottom: 36px; }
   .writers-grid { grid-template-columns: 1fr; gap: 0; }
+  .writers-grid .divider { display: none; }
   .writer {
     grid-template-columns: 1fr;
     gap: 0;
     padding: 40px 0;
     text-align: center;
   }
-  .writer:first-child { border-right: none; border-bottom: 1px solid var(--rule); }
+  .writer:first-of-type { border-bottom: 1px solid var(--rule); }
   .writer-photo {
     width: 140px;
-    height: 180px;
     margin: 0 auto 24px;
   }
-  .writer-info { padding-top: 0; }
   .writer h3 { font-size: 28px; }
   .writer-bio {
     max-width: 400px;
@@ -1005,12 +998,12 @@ footer {
   .essay-list li h3 { font-size: 15px; line-height: 1.35; }
   .essay-list li .row-meta { font-size: 9px; }
 
-  /* Counsel */
+  /* Writers */
   .writers-block { padding: 48px 0 56px; }
   .writers-head { margin-bottom: 28px; padding-bottom: 12px; }
   .writers-head h2 { font-size: 12px; }
   .writer { padding: 32px 0; }
-  .writer-photo { width: 120px; height: 150px; margin-bottom: 20px; }
+  .writer-photo { width: 120px; margin-bottom: 20px; }
   .writer h3 { font-size: 24px; margin-bottom: 6px; }
   .writer-role { font-size: 9px; margin-bottom: 16px; }
   .writer-bio { font-size: 14px; margin-bottom: 16px; }
@@ -1212,35 +1205,36 @@ footer {
   </div>
 </section>
 
-<!-- COUNSEL -->
+<!-- THE WRITERS -->
 <section class="writers-block" id="counsel">
-  <div class="wrap">
+  <div class="wrap-wide">
     <div class="writers-head">
-      <h2>Counsel</h2>
+      <h2>The Writers</h2>
     </div>
     <div class="writers-grid">
-      <div class="writer">
+      <article class="writer">
         <div class="writer-photo">
-          <img src="david.jpg" alt="David Richter">
+          <img src="david-duotone.png" alt="David Richter">
         </div>
         <div class="writer-info">
-          <h3>David Richter</h3>
+          <h3>David<br>Richter</h3>
           <div class="writer-role">Partner · Litigation</div>
           <p class="writer-bio">Commercial disputes, appellate advocacy, and the discipline of strategic restraint. Fifteen years representing clients in New Mexico state and federal courts.</p>
           <a href="#latest" class="writer-archive">23 essays →</a>
         </div>
-      </div>
-      <div class="writer">
+      </article>
+      <div class="divider"></div>
+      <article class="writer">
         <div class="writer-photo">
-          <img src="jeremy.jpg" alt="Jeremy Jones">
+          <img src="jeremy-duotone.png" alt="Jeremy Jones">
         </div>
         <div class="writer-info">
-          <h3>Jeremy Jones</h3>
+          <h3>Jeremy<br>Jones</h3>
           <div class="writer-role">Partner · Transactional</div>
           <p class="writer-bio">Transactional counsel for closely-held businesses. Entity formation, operating agreements, and the contractual architecture that precedes growth.</p>
           <a href="#latest" class="writer-archive">18 essays →</a>
         </div>
-      </div>
+      </article>
     </div>
   </div>
 </section>

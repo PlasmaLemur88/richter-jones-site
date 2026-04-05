@@ -4,38 +4,29 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Retain Counsel — Richter Jones</title>
-<meta name="description" content="Contact Richter Jones for matters in commercial litigation, contracts, employment, and business formation in New Mexico.">
-<link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root {
   --paper: #F4EFE4;
   --paper-dim: #EBE4D3;
-  --paper-line: #DDD3BC;
   --ink: #1A1714;
   --ink-soft: #3A342D;
   --ink-muted: #6B6156;
   --oxblood: #6E1E28;
-  --oxblood-soft: #8B2A35;
   --rule: rgba(26, 23, 20, 0.12);
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
 
 body {
   font-family: 'Spectral', Georgia, serif;
   background: var(--paper);
   color: var(--ink);
-  font-size: 18px;
-  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+  position: relative;
 }
 
 body::before {
@@ -43,31 +34,31 @@ body::before {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  opacity: 0.35;
+  opacity: 0.3;
   mix-blend-mode: multiply;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0.1 0 0 0 0 0.09 0 0 0 0 0.08 0 0 0 0.08 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   z-index: 1;
 }
 
-.wrap-wide {
-  max-width: 1080px;
+.wrap {
+  max-width: 720px;
   margin: 0 auto;
   padding: 0 32px;
   position: relative;
   z-index: 2;
 }
 
-/* NAV */
-nav.site {
+/* ============ NAV ============ */
+nav {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(244, 239, 228, 0.85);
+  background: rgba(244, 239, 228, 0.88);
   backdrop-filter: saturate(140%) blur(12px);
   -webkit-backdrop-filter: saturate(140%) blur(12px);
   border-bottom: 1px solid var(--rule);
 }
-nav.site .inner {
+nav .inner {
   max-width: 1080px;
   margin: 0 auto;
   padding: 18px 32px;
@@ -75,37 +66,20 @@ nav.site .inner {
   align-items: center;
   justify-content: space-between;
 }
-.wordmark {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  color: var(--ink);
-  text-decoration: none;
-}
-.wordmark img.mark {
-  height: 22px;
-  width: auto;
-  display: block;
-}
-.wordmark .name-stack {
-  display: flex;
-  flex-direction: column;
-  line-height: 1;
-  gap: 4px;
-}
-.wordmark .name-stack .primary {
+nav .wordmark {
   font-family: 'Spectral', serif;
   font-weight: 500;
   font-size: 16px;
+  color: var(--ink);
+  text-decoration: none;
   letter-spacing: 0.01em;
 }
-nav.site ul {
+nav ul {
   list-style: none;
   display: flex;
   gap: 36px;
-  align-items: center;
 }
-nav.site a.navlink {
+nav a.navlink {
   font-family: 'Inter Tight', sans-serif;
   font-size: 12px;
   font-weight: 500;
@@ -115,417 +89,340 @@ nav.site a.navlink {
   text-decoration: none;
   transition: color 0.2s;
 }
-nav.site a.navlink:hover { color: var(--oxblood); }
-nav.site a.navlink.active { color: var(--oxblood); }
+nav a.navlink:hover { color: var(--oxblood); }
+nav a.navlink.active { color: var(--oxblood); }
 
-/* PAGE HEADER */
+/* ============ PAGE HEADER ============ */
 .page-header {
-  padding: 80px 0 60px;
+  padding: 100px 0 72px;
   border-bottom: 1px solid var(--rule);
 }
-.page-header .eyebrow {
+.page-header .label {
   font-family: 'Inter Tight', sans-serif;
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 600;
-  letter-spacing: 0.25em;
+  letter-spacing: 0.26em;
   text-transform: uppercase;
   color: var(--oxblood);
   margin-bottom: 20px;
 }
 .page-header h1 {
   font-family: 'Spectral', serif;
-  font-weight: 400;
+  font-weight: 300;
   font-style: italic;
-  font-size: clamp(36px, 5vw, 48px);
+  font-size: clamp(36px, 5vw, 52px);
   line-height: 1.15;
   letter-spacing: -0.02em;
   color: var(--ink);
-  max-width: 600px;
+  max-width: 520px;
 }
 
-/* CONTACT CONTENT */
-.contact-content {
-  flex: 1;
-  padding: 80px 0;
+/* ============ INTRO ============ */
+.intro {
+  padding: 56px 0 0;
 }
-.contact-grid {
-  display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 80px;
-  align-items: start;
-}
-
-/* LEFT COLUMN - INFO */
-.contact-info h2 {
+.intro p {
   font-family: 'Spectral', serif;
-  font-weight: 500;
-  font-size: 14px;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--ink);
-  margin-bottom: 32px;
-  padding-bottom: 16px;
-  border-bottom: 1px solid var(--rule);
-}
-.contact-block {
-  margin-bottom: 40px;
-}
-.contact-block .label {
-  font-family: 'Inter Tight', sans-serif;
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--ink-muted);
-  margin-bottom: 12px;
-}
-.contact-block a,
-.contact-block p {
-  font-family: 'Spectral', serif;
-  font-size: 20px;
-  color: var(--ink);
-  text-decoration: none;
-  line-height: 1.4;
-}
-.contact-block a {
-  transition: color 0.2s;
-}
-.contact-block a:hover {
-  color: var(--oxblood);
-}
-.contact-block address {
-  font-style: normal;
-  font-family: 'Spectral', serif;
-  font-size: 17px;
-  color: var(--ink-soft);
-  line-height: 1.6;
-}
-
-.office-hours {
-  margin-top: 48px;
-  padding-top: 32px;
-  border-top: 1px solid var(--rule);
-}
-.office-hours .label {
-  font-family: 'Inter Tight', sans-serif;
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--ink-muted);
-  margin-bottom: 12px;
-}
-.office-hours p {
-  font-family: 'Spectral', serif;
-  font-size: 16px;
-  color: var(--ink-soft);
-  font-style: italic;
-}
-
-.map-container {
-  margin-top: 48px;
-  height: 240px;
-  background: var(--paper-dim);
-  border: 1px solid var(--rule);
-  overflow: hidden;
-}
-.map-container iframe {
-  width: 100%;
-  height: 100%;
-  border: 0;
-  filter: grayscale(100%) contrast(1.1);
-  transition: filter 0.4s;
-}
-.map-container:hover iframe {
-  filter: grayscale(0%) contrast(1);
-}
-
-/* RIGHT COLUMN - FORM */
-.contact-form-section h2 {
-  font-family: 'Spectral', serif;
-  font-weight: 500;
-  font-size: 14px;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--ink);
-  margin-bottom: 32px;
-  padding-bottom: 16px;
-  border-bottom: 1px solid var(--rule);
-}
-.contact-form-section .form-intro {
-  font-family: 'Spectral', serif;
-  font-size: 17px;
   font-weight: 300;
-  color: var(--ink-soft);
+  font-size: 19px;
   line-height: 1.6;
-  margin-bottom: 36px;
+  color: var(--ink-soft);
+  max-width: 580px;
 }
 
-.inquiry-form .form-group {
-  margin-bottom: 24px;
-}
-.inquiry-form label {
-  display: block;
-  font-family: 'Inter Tight', sans-serif;
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--ink-muted);
-  margin-bottom: 10px;
-}
-.inquiry-form input,
-.inquiry-form textarea,
-.inquiry-form select {
-  width: 100%;
-  padding: 16px 20px;
-  font-family: 'Spectral', serif;
-  font-size: 17px;
-  color: var(--ink);
-  background: #fff;
-  border: 1px solid var(--paper-line);
-  transition: border-color 0.2s;
-}
-.inquiry-form input:focus,
-.inquiry-form textarea:focus,
-.inquiry-form select:focus {
-  outline: none;
-  border-color: var(--oxblood);
-}
-.inquiry-form input::placeholder,
-.inquiry-form textarea::placeholder {
-  color: var(--ink-muted);
-  font-style: italic;
-}
-.inquiry-form textarea {
-  resize: vertical;
-  min-height: 140px;
-}
-.inquiry-form select {
-  appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%236B6156' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 20px center;
-  cursor: pointer;
+/* ============ FORM ============ */
+.inquiry {
+  padding: 64px 0 56px;
 }
 
 .form-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px;
+  gap: 48px;
+  margin-bottom: 48px;
 }
 
-.inquiry-form .submit-btn {
+.field {
+  position: relative;
+}
+
+.field label {
+  display: block;
+  font-family: 'Inter Tight', sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  margin-bottom: 12px;
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+  padding: 10px 0;
+  border: none;
+  border-bottom: 1px solid rgba(26, 23, 20, 0.2);
+  background: transparent;
+  font-family: 'Spectral', serif;
+  font-size: 17px;
+  font-weight: 400;
+  color: var(--ink);
+  outline: none;
+  transition: border-color 0.25s;
+  border-radius: 0;
+  -webkit-appearance: none;
+}
+
+.field input:focus,
+.field textarea:focus {
+  border-color: var(--oxblood);
+}
+
+.field input::placeholder,
+.field textarea::placeholder {
+  color: rgba(107, 97, 86, 0.45);
+  font-style: italic;
+  font-weight: 300;
+}
+
+.field-full {
+  margin-bottom: 48px;
+}
+
+.field textarea {
+  resize: vertical;
+  min-height: 140px;
+  line-height: 1.55;
+  font-weight: 300;
+}
+
+.form-footer {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.submit-btn {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  padding: 16px 32px;
+  padding: 14px 28px;
+  border: 1px solid var(--ink);
+  background: transparent;
+  color: var(--ink);
   font-family: 'Inter Tight', sans-serif;
   font-size: 11px;
   font-weight: 600;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--paper);
-  background: var(--ink);
-  border: none;
   cursor: pointer;
-  transition: background 0.25s;
+  transition: all 0.25s;
+  flex-shrink: 0;
+}
+.submit-btn:hover {
+  background: var(--ink);
+  color: var(--paper);
+}
+.submit-btn .arrow {
+  transition: transform 0.25s;
+}
+.submit-btn:hover .arrow {
+  transform: translateX(3px);
+}
+
+.form-disclaimer {
+  font-family: 'Spectral', serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--ink-muted);
+  max-width: 320px;
+}
+
+/* ============ DIVIDER ============ */
+.divider {
+  border: none;
+  height: 1px;
+  background: var(--rule);
+  margin: 0;
+}
+
+/* ============ CONTACT INFO ============ */
+.contact-info {
+  padding: 56px 0 100px;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 48px;
+}
+
+.contact-block .block-label {
+  font-family: 'Inter Tight', sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  margin-bottom: 14px;
+}
+
+.contact-block .block-value {
+  font-family: 'Spectral', serif;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 1.5;
+  color: var(--ink);
+}
+.contact-block .block-value a {
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid var(--rule);
+  transition: border-color 0.2s, color 0.2s;
+}
+.contact-block .block-value a:hover {
+  color: var(--oxblood);
+  border-color: var(--oxblood);
+}
+
+.contact-block .block-note {
+  font-family: 'Spectral', serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: 14px;
+  color: var(--ink-muted);
   margin-top: 8px;
 }
-.inquiry-form .submit-btn:hover {
-  background: var(--oxblood);
-}
 
-.form-note {
-  margin-top: 32px;
-  padding-top: 24px;
-  border-top: 1px solid var(--rule);
-  font-family: 'Spectral', serif;
-  font-size: 14px;
-  font-style: italic;
-  color: var(--ink-muted);
-  line-height: 1.6;
-}
-
-/* FOOTER */
+/* ============ FOOTER ============ */
 footer {
   background: var(--ink);
   color: var(--paper);
+  padding: 60px 0 40px;
   position: relative;
   z-index: 2;
-  margin-top: auto;
 }
-.footer-simple {
-  padding: 40px 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+footer .inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 32px;
 }
-.footer-simple .back-link {
+.footer-legal {
   font-family: 'Inter Tight', sans-serif;
   font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: rgba(244, 239, 228, 0.6);
-  text-decoration: none;
-  transition: color 0.2s;
-}
-.footer-simple .back-link:hover {
-  color: var(--paper);
-}
-.footer-simple .copyright {
-  font-family: 'Inter Tight', sans-serif;
-  font-size: 11px;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.04em;
   color: rgba(244, 239, 228, 0.35);
+  line-height: 1.5;
+  max-width: 640px;
 }
-
-/* RESPONSIVE */
-@media (max-width: 900px) {
-  .contact-grid {
-    grid-template-columns: 1fr;
-    gap: 60px;
-  }
-  .contact-info {
-    order: 2;
-  }
-  .contact-form-section {
-    order: 1;
-  }
-}
-@media (max-width: 600px) {
-  .form-row {
-    grid-template-columns: 1fr;
-  }
-  nav.site ul { gap: 20px; }
-  nav.site a.navlink { font-size: 11px; }
-  .page-header { padding: 60px 0 48px; }
-  .contact-content { padding: 60px 0; }
-  .footer-simple { flex-direction: column; gap: 16px; text-align: center; }
+.footer-copy {
+  margin-top: 20px;
+  font-family: 'Inter Tight', sans-serif;
+  font-size: 11px;
+  color: rgba(244, 239, 228, 0.35);
 }
 </style>
 </head>
 <body>
 
-<nav class="site">
+<!-- NAV -->
+<nav>
   <div class="inner">
-    <a href="index.html" class="wordmark">
-      <img class="mark" src="data:image/png;base64,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" alt="Richter Jones monogram">
-      <span class="name-stack">
-        <span class="primary">Richter Jones</span>
-      </span>
-    </a>
+    <a href="#" class="wordmark">Richter Jones</a>
     <ul>
-      <li><a href="index.html#latest" class="navlink">Essays</a></li>
-      <li><a href="index.html#counsel" class="navlink">Counsel</a></li>
-      <li><a href="contact.html" class="navlink active">Retain</a></li>
+      <li><a href="#" class="navlink">Essays</a></li>
+      <li><a href="#" class="navlink">Counsel</a></li>
+      <li><a href="#" class="navlink active">Retain</a></li>
     </ul>
   </div>
 </nav>
 
+<!-- PAGE HEADER -->
 <header class="page-header">
-  <div class="wrap-wide">
-    <div class="eyebrow">Retain Counsel</div>
+  <div class="wrap">
+    <div class="label">Retain Counsel</div>
     <h1>For matters requiring representation</h1>
   </div>
 </header>
 
-<main class="contact-content">
-  <div class="wrap-wide">
+<!-- INTRO -->
+<div class="intro">
+  <div class="wrap">
+    <p>We accept new matters in commercial litigation, contract disputes, employment law, and business formation throughout New Mexico. Describe your situation briefly and we will follow up within one business day.</p>
+  </div>
+</div>
+
+<!-- FORM -->
+<div class="inquiry">
+  <div class="wrap">
+    <form onsubmit="event.preventDefault()">
+      <div class="form-row">
+        <div class="field">
+          <label for="name">Your name</label>
+          <input type="text" id="name" placeholder="Full name" autocomplete="name">
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="you@company.com" autocomplete="email">
+        </div>
+      </div>
+
+      <div class="field field-full">
+        <label for="message">Describe your situation</label>
+        <textarea id="message" placeholder="Tell us briefly what you're facing. We will follow up to discuss details."></textarea>
+      </div>
+
+      <div class="form-footer">
+        <button type="submit" class="submit-btn">
+          Submit inquiry
+          <span class="arrow">→</span>
+        </button>
+        <p class="form-disclaimer">This form does not create an attorney-client relationship. Information submitted here is not privileged until we have agreed to representation.</p>
+      </div>
+    </form>
+  </div>
+</div>
+
+<hr class="divider" style="max-width: 720px; margin: 0 auto;">
+
+<!-- CONTACT INFO -->
+<div class="contact-info">
+  <div class="wrap">
     <div class="contact-grid">
-
-      <div class="contact-info">
-        <h2>Direct</h2>
-
-        <div class="contact-block">
-          <div class="label">Telephone</div>
+      <div class="contact-block">
+        <div class="block-label">Telephone</div>
+        <div class="block-value">
           <a href="tel:5056023002">(505) 602-3002</a>
         </div>
-
-        <div class="contact-block">
-          <div class="label">Email</div>
+        <div class="block-note">Monday–Friday, 9–5 MT</div>
+      </div>
+      <div class="contact-block">
+        <div class="block-label">Email</div>
+        <div class="block-value">
           <a href="mailto:counsel@richterjones.com">counsel@richterjones.com</a>
         </div>
-
-        <div class="contact-block">
-          <div class="label">Office</div>
-          <address>
-            113 East Palace Avenue, Suite B<br>
-            Santa Fe, New Mexico 87501
-          </address>
-        </div>
-
-        <div class="office-hours">
-          <div class="label">Office Hours</div>
-          <p>Monday through Friday, 9am to 5pm Mountain Time</p>
-        </div>
-
-        <div class="map-container">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3234.8!2d-105.937!3d35.687!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzXCsDQxJzEzLjIiTiAxMDXCsDU2JzEzLjIiVw!5e0!3m2!1sen!2sus!4v1600000000000!5m2!1sen!2sus"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade">
-          </iframe>
-        </div>
+        <div class="block-note">Replies within one business day</div>
       </div>
-
-      <div class="contact-form-section">
-        <h2>Inquire</h2>
-        <p class="form-intro">We accept new matters in commercial litigation, contract disputes, employment law, and business formation throughout New Mexico. Tell us briefly about your situation and we will respond within one business day.</p>
-
-        <form class="inquiry-form" action="https://formspree.io/f/placeholder" method="POST">
-          <div class="form-row">
-            <div class="form-group">
-              <label for="name">Name</label>
-              <input type="text" id="name" name="name" placeholder="Your full name" required>
-            </div>
-            <div class="form-group">
-              <label for="email">Email</label>
-              <input type="email" id="email" name="email" placeholder="you@company.com" required>
-            </div>
-          </div>
-
-          <div class="form-row">
-            <div class="form-group">
-              <label for="phone">Phone</label>
-              <input type="tel" id="phone" name="phone" placeholder="(505) 555-0100">
-            </div>
-            <div class="form-group">
-              <label for="matter">Nature of Matter</label>
-              <select id="matter" name="matter">
-                <option value="">Select one</option>
-                <option value="litigation">Commercial Litigation</option>
-                <option value="contracts">Contracts</option>
-                <option value="employment">Employment</option>
-                <option value="formation">Business Formation</option>
-                <option value="other">Other</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label for="message">Brief Description</label>
-            <textarea id="message" name="message" placeholder="Please describe your situation briefly. We will follow up to discuss details." required></textarea>
-          </div>
-
-          <button type="submit" class="submit-btn">Submit Inquiry &rarr;</button>
-        </form>
-
-        <p class="form-note">This form does not create an attorney-client relationship. Information submitted here is not privileged until we have agreed to representation.</p>
+      <div class="contact-block">
+        <div class="block-label">Office</div>
+        <div class="block-value">
+          <a href="https://maps.google.com/?q=113+East+Palace+Avenue+Suite+B+Santa+Fe+NM+87501" target="_blank" rel="noopener">113 East Palace Avenue<br>Suite B, Santa Fe, NM 87501</a>
+        </div>
+        <div class="block-note">Open in Maps →</div>
       </div>
-
     </div>
   </div>
-</main>
+</div>
 
+<!-- FOOTER -->
 <footer>
-  <div class="wrap-wide">
-    <div class="footer-simple">
-      <a href="index.html" class="back-link">&larr; Back to Essays</a>
-      <span class="copyright">&copy; 2026 RJ Law LLC</span>
-    </div>
+  <div class="inner">
+    <p class="footer-legal">The information on this website is for general information purposes only. Nothing on this site should be taken as legal advice for any individual case or situation. Viewing this site does not create an attorney-client relationship.</p>
+    <p class="footer-copy">© 2026 RJ Law LLC</p>
   </div>
 </footer>
 
