@@ -4,16 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Richter Jones — Essays & Counsel</title>
-<meta name="description" content="Essays on New Mexico business, contracts, and courtrooms — from Santa Fe. By David Richter and Jeremy Jones.">
-<link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<meta property="og:title" content="Richter Jones — Essays & Counsel">
-<meta property="og:description" content="Essays on New Mexico business, contracts, and courtrooms — from Santa Fe. By David Richter and Jeremy Jones.">
-<meta property="og:image" content="/og-image.jpg">
-<meta property="og:type" content="website">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Richter Jones — Essays & Counsel">
-<meta name="twitter:description" content="Essays on New Mexico business, contracts, and courtrooms — from Santa Fe.">
-<meta name="twitter:image" content="/og-image.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
@@ -192,12 +182,15 @@ nav.site a.navlink:hover { color: var(--oxblood); }
   inset: 0;
   z-index: -2;
   background-color: var(--paper);
-  background-image: url('hero-bg.jpg');
-  background-size: cover;
-  background-position: center 40%;
+  /* To replace with a real photo later, add:
+     background-image: url('your-nm-landscape.jpg');
+     background-size: cover;
+     background-position: center 60%;  */
 }
 .masthead-bg svg {
-  display: none;
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 .masthead-overlay {
   position: absolute;
@@ -205,9 +198,9 @@ nav.site a.navlink:hover { color: var(--oxblood); }
   z-index: -1;
   background:
     linear-gradient(180deg,
-      rgba(244, 239, 228, 0.55) 0%,
-      rgba(244, 239, 228, 0.75) 55%,
-      rgba(244, 239, 228, 0.90) 100%);
+      rgba(244, 239, 228, 0.78) 0%,
+      rgba(244, 239, 228, 0.92) 55%,
+      rgba(244, 239, 228, 0.98) 100%);
 }
 .masthead .wrap {
   position: relative;
@@ -249,11 +242,28 @@ nav.site a.navlink:hover { color: var(--oxblood); }
   color: var(--ink);
   background: rgba(26, 23, 20, 0.04);
 }
-.masthead .sub-btn .substack-icon {
-  width: 14px;
-  height: 14px;
-  object-fit: contain;
+.masthead .sub-btn .s-mark {
+  display: inline-block;
+  width: 11px;
+  height: 11px;
+  background: #FF6719;
+  border-radius: 2px;
+  position: relative;
+  opacity: 0.85;
 }
+.masthead .sub-btn .s-mark::before,
+.masthead .sub-btn .s-mark::after,
+.masthead .sub-btn .s-mark > span {
+  content: '';
+  position: absolute;
+  left: 2px;
+  right: 2px;
+  height: 1.2px;
+  background: #fff;
+}
+.masthead .sub-btn .s-mark::before { top: 2.2px; }
+.masthead .sub-btn .s-mark > span { top: 4.9px; }
+.masthead .sub-btn .s-mark::after { top: 7.6px; }
 .masthead .sub-count {
   font-family: 'Inter Tight', sans-serif;
   font-size: 10px;
@@ -533,123 +543,6 @@ nav.site a.navlink:hover { color: var(--oxblood); }
 }
 .subscribe-form button:hover { background: var(--oxblood); }
 
-/* ============ INQUIRE MODAL ============ */
-.modal-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(26, 23, 20, 0.85);
-  backdrop-filter: blur(8px);
-  z-index: 100;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.4s, visibility 0.4s;
-}
-.modal-overlay.active {
-  opacity: 1;
-  visibility: visible;
-}
-.modal-content {
-  background: var(--paper);
-  max-width: 480px;
-  width: 90%;
-  padding: 64px 56px;
-  position: relative;
-  transform: translateY(20px);
-  transition: transform 0.4s ease;
-  text-align: center;
-}
-.modal-overlay.active .modal-content {
-  transform: translateY(0);
-}
-.modal-close {
-  position: absolute;
-  top: 24px;
-  right: 28px;
-  background: none;
-  border: none;
-  font-size: 24px;
-  color: var(--ink-muted);
-  cursor: pointer;
-  line-height: 1;
-  transition: color 0.2s;
-}
-.modal-close:hover { color: var(--ink); }
-.modal-eyebrow {
-  font-family: 'Inter Tight', sans-serif;
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-  color: var(--oxblood);
-  margin-bottom: 24px;
-}
-.modal-title {
-  font-family: 'Spectral', serif;
-  font-size: 36px;
-  font-weight: 400;
-  font-style: italic;
-  color: var(--ink);
-  margin-bottom: 20px;
-  letter-spacing: -0.02em;
-  line-height: 1.2;
-}
-.modal-desc {
-  font-family: 'Spectral', serif;
-  font-size: 17px;
-  font-weight: 300;
-  color: var(--ink-soft);
-  line-height: 1.6;
-  margin-bottom: 40px;
-  max-width: 360px;
-  margin-left: auto;
-  margin-right: auto;
-}
-.modal-contact-list {
-  list-style: none;
-  margin-bottom: 40px;
-}
-.modal-contact-list li {
-  padding: 16px 0;
-  border-top: 1px solid var(--rule);
-}
-.modal-contact-list li:last-child {
-  border-bottom: 1px solid var(--rule);
-}
-.modal-contact-list a {
-  font-family: 'Spectral', serif;
-  font-size: 20px;
-  color: var(--ink);
-  text-decoration: none;
-  transition: color 0.2s;
-}
-.modal-contact-list a:hover {
-  color: var(--oxblood);
-}
-.modal-contact-list .contact-label {
-  display: block;
-  font-family: 'Inter Tight', sans-serif;
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--ink-muted);
-  margin-bottom: 6px;
-}
-.modal-address {
-  font-family: 'Spectral', serif;
-  font-size: 15px;
-  font-style: italic;
-  color: var(--ink-muted);
-  line-height: 1.5;
-}
-@media (max-width: 600px) {
-  .modal-content { padding: 48px 32px; }
-  .modal-title { font-size: 28px; }
-}
-
 /* ============ FOOTER ============ */
 footer {
   margin-top: 120px;
@@ -691,8 +584,8 @@ footer {
 }
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.8fr 1fr 1fr 1fr 1.3fr;
-  gap: 36px;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 48px;
   padding-bottom: 48px;
   border-bottom: 1px solid rgba(244, 239, 228, 0.12);
 }
@@ -727,32 +620,6 @@ footer {
   transition: color 0.2s;
 }
 .footer-grid a:hover { color: var(--paper); }
-.footer-subscribe p {
-  font-size: 14px;
-  color: rgba(244, 239, 228, 0.6);
-  margin-bottom: 16px;
-  font-weight: 300;
-}
-.footer-sub-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 0;
-  background: transparent;
-  border: none;
-  color: rgba(244, 239, 228, 0.75) !important;
-  font-size: 14px !important;
-  font-weight: 400 !important;
-  white-space: nowrap;
-  transition: color 0.2s;
-}
-.footer-sub-btn:hover {
-  color: var(--paper) !important;
-}
-.footer-sub-btn .substack-icon {
-  width: 16px;
-  height: 16px;
-}
 
 .footer-legal {
   padding-top: 32px;
@@ -964,59 +831,34 @@ footer {
 .writers-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 80px;
-}
-.writer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-.writer-photo {
-  width: 180px;
-  height: 220px;
-  overflow: hidden;
-  filter: grayscale(100%) contrast(1.1);
-  transition: filter 0.4s ease;
-  margin-bottom: 32px;
-}
-.writer:hover .writer-photo {
-  filter: grayscale(0%) contrast(1);
-}
-.writer-photo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.writer-info {
-  max-width: 320px;
+  gap: 64px;
 }
 .writer h3 {
   font-family: 'Spectral', serif;
   font-weight: 400;
-  font-size: 36px;
+  font-size: 32px;
   line-height: 1.1;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.018em;
   color: var(--ink);
-  margin-bottom: 10px;
-  white-space: nowrap;
+  margin-bottom: 8px;
 }
 .writer-role {
   font-family: 'Inter Tight', sans-serif;
   font-size: 10px;
   font-weight: 600;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--oxblood);
-  margin-bottom: 24px;
+  margin-bottom: 18px;
 }
 .writer-bio {
   font-family: 'Spectral', serif;
   font-weight: 300;
-  font-size: 16px;
-  line-height: 1.6;
+  font-size: 17px;
+  line-height: 1.55;
   color: var(--ink-soft);
-  margin-bottom: 28px;
+  margin-bottom: 20px;
+  max-width: 440px;
 }
 .writer-archive {
   font-family: 'Inter Tight', sans-serif;
@@ -1041,9 +883,8 @@ footer {
   .preview { position: static; order: -1; padding-bottom: 40px; border-bottom: 1px solid var(--rule); margin-bottom: 8px; }
   .preview-title { font-size: 30px; }
   .preview-dek { font-size: 17px; }
-  .writers-grid { grid-template-columns: 1fr; gap: 64px; }
-  .writer-photo { width: 160px; height: 200px; }
-  .writer h3 { font-size: 32px; }
+  .writers-grid { grid-template-columns: 1fr; gap: 48px; }
+  .writer h3 { font-size: 28px; }
 }
 
 @media (max-width: 820px) {
@@ -1069,7 +910,7 @@ footer {
 
 <nav class="site">
   <div class="inner">
-    <a href="/" class="wordmark">
+    <a href="#" class="wordmark">
       <img class="mark" src="data:image/png;base64,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" alt="Richter Jones monogram">
       <span class="name-stack">
         <span class="primary">Richter Jones</span>
@@ -1079,7 +920,7 @@ footer {
       <li><a href="#latest" class="navlink">Essays</a></li>
       <li><a href="#david" class="navlink">David Richter</a></li>
       <li><a href="#jeremy" class="navlink">Jeremy Jones</a></li>
-      <li><a href="#" class="navlink" id="contactTrigger">Retain Counsel</a></li>
+      <li><a href="#contact" class="navlink">Contact</a></li>
     </ul>
   </div>
 </nav>
@@ -1139,7 +980,7 @@ footer {
     <p class="lede">Essays on New Mexico business, contracts, and courtrooms &mdash; from Santa Fe. By David Richter and Jeremy Jones.</p>
     <div class="sub-row">
       <a href="#subscribe" class="sub-btn">
-        <img src="substack-logo.png" alt="Substack" class="substack-icon">
+        <span class="s-mark"><span></span></span>
         Subscribe on Substack
       </a>
       <span class="sub-count">2,847 readers</span>
@@ -1152,7 +993,7 @@ footer {
   <div class="wrap-wide">
     <div class="reader-head">
       <h2>Latest essays</h2>
-      <a href="#latest" class="view-all">View the archive &rarr;</a>
+      <a href="#" class="view-all">View the archive &rarr;</a>
     </div>
 
     <div class="reader-grid">
@@ -1222,58 +1063,27 @@ footer {
 <section class="writers-block">
   <div class="wrap">
     <div class="writers-head">
-      <h2>Counsel</h2>
+      <h2>The Writers</h2>
     </div>
     <div class="writers-grid">
       <div class="writer">
-        <div class="writer-photo">
-          <img src="david.jpg" alt="David Richter">
-        </div>
-        <div class="writer-info">
-          <h3>David Richter</h3>
-          <div class="writer-role">Partner · Litigation</div>
-          <p class="writer-bio">Commercial disputes, appellate advocacy, and the discipline of strategic restraint. Fifteen years representing clients in New Mexico state and federal courts.</p>
-          <a href="#latest" class="writer-archive">23 essays →</a>
-        </div>
+        <h3>David Richter</h3>
+        <div class="writer-role">Partner &middot; Litigation</div>
+        <p class="writer-bio">Commercial disputes, deposition craft, and the practice of strategic restraint. Fifteen years in courtrooms.</p>
+        <a href="#" class="writer-archive">23 essays &rarr;</a>
       </div>
       <div class="writer">
-        <div class="writer-photo">
-          <img src="jeremy.jpg" alt="Jeremy Jones">
-        </div>
-        <div class="writer-info">
-          <h3>Jeremy Jones</h3>
-          <div class="writer-role">Partner · Transactional</div>
-          <p class="writer-bio">Transactional counsel for closely-held businesses. Entity formation, operating agreements, and the contractual architecture that precedes growth.</p>
-          <a href="#latest" class="writer-archive">18 essays →</a>
-        </div>
+        <h3>Jeremy Jones</h3>
+        <div class="writer-role">Partner &middot; Transactional</div>
+        <p class="writer-bio">Contracts, entity formation, and the architecture of closely-held companies. Counsel from the garage stage to the exit.</p>
+        <a href="#" class="writer-archive">18 essays &rarr;</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- INQUIRE MODAL -->
-<div class="modal-overlay" id="contactModal">
-  <div class="modal-content">
-    <button class="modal-close" aria-label="Close">&times;</button>
-    <div class="modal-eyebrow">Retain Counsel</div>
-    <h2 class="modal-title">For matters requiring representation</h2>
-    <p class="modal-desc">We accept new matters in commercial litigation, contract disputes, employment law, and business formation throughout New Mexico.</p>
-    <ul class="modal-contact-list">
-      <li>
-        <span class="contact-label">Telephone</span>
-        <a href="tel:5056023002">(505) 602-3002</a>
-      </li>
-      <li>
-        <span class="contact-label">Email</span>
-        <a href="mailto:counsel@richterjones.com">counsel@richterjones.com</a>
-      </li>
-    </ul>
-    <p class="modal-address">113 East Palace Avenue, Suite B<br>Santa Fe, New Mexico 87501</p>
-  </div>
-</div>
-
 <!-- FOOTER -->
-<footer>
+<footer id="contact">
   <div class="footer-quote">
     <div class="wrap-wide">
       <p>"The life of the law has not been logic; it has been experience."</p>
@@ -1285,48 +1095,40 @@ footer {
     <div class="wrap-wide">
       <div class="footer-grid">
         <div class="brand">
-          <a href="/" class="wordmark">
+          <a href="#" class="wordmark">
             <img class="mark" src="data:image/png;base64,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" alt="Richter Jones monogram">
             <span class="name-stack">
               <span class="primary" style="color: var(--paper);">Richter Jones</span>
             </span>
           </a>
-          <p>A Santa Fe law practice accepting matters in commercial litigation, contracts, employment, and business formation. Counsel before the trouble, and when it arrives.</p>
+          <p>A Santa Fe business law practice. Commercial litigation, contracts, employment, and the counsel that comes before the trouble.</p>
         </div>
         <div>
           <h5>Practice</h5>
           <ul>
-            <li><a href="#latest">Litigation</a></li>
-            <li><a href="#latest">Contracts</a></li>
-            <li><a href="#latest">Employment</a></li>
-            <li><a href="#latest">Formation</a></li>
+            <li><a href="#">Litigation</a></li>
+            <li><a href="#">Contracts</a></li>
+            <li><a href="#">Employment</a></li>
+            <li><a href="#">Formation</a></li>
           </ul>
         </div>
         <div>
           <h5>Read</h5>
           <ul>
-            <li><a href="#latest">All essays</a></li>
-            <li><a href="#david">David's column</a></li>
-            <li><a href="#jeremy">Jeremy's column</a></li>
-            <li><a href="#subscribe">Subscribe</a></li>
+            <li><a href="#">All essays</a></li>
+            <li><a href="#">David's column</a></li>
+            <li><a href="#">Jeremy's column</a></li>
+            <li><a href="#">Subscribe</a></li>
           </ul>
         </div>
         <div>
-          <h5>Retain Counsel</h5>
+          <h5>Contact</h5>
           <ul>
-            <li><a href="mailto:hello@richterjones.com">hello@richterjones.com</a></li>
             <li><a href="tel:5056023002">(505) 602-3002</a></li>
-            <li><a href="#" class="footer-contact-trigger">Discuss a matter</a></li>
-            <li><a href="https://linkedin.com" target="_blank">LinkedIn</a></li>
+            <li><a href="#">313 Paseo de Peralta</a></li>
+            <li><a href="#">Santa Fe, NM 87501</a></li>
+            <li><a href="#">LinkedIn</a></li>
           </ul>
-        </div>
-        <div class="footer-subscribe">
-          <h5>Subscribe</h5>
-          <p>Get new essays in your inbox.</p>
-          <a href="#subscribe" class="footer-sub-btn">
-            <img src="substack-logo.png" alt="Substack" class="substack-icon">
-            Subscribe on Substack
-          </a>
         </div>
       </div>
 
@@ -1340,13 +1142,13 @@ footer {
 
 <script>
 (function () {
-    const essays = [
-    { cat: 'Jurisprudence', title: 'Questions of fact, questions of law', dek: 'Kant opened his most difficult passage with this distinction. Every courtroom argument turns on which side of the line your problem falls. A meditation on the border that decides everything.', author: 'David Richter', read: '14 min read', date: 'Apr 02, 2026' },
-    { cat: 'Contracts', title: 'On the violence of the boilerplate indemnity', dek: 'There is a paragraph in every contract that nobody reads. It is almost always the paragraph that decides who wins when things fall apart. What does it mean to agree to language you did not write?', author: 'Jeremy Jones', read: '8 min read', date: 'Mar 27, 2026' },
-    { cat: 'Employment', title: 'The non-compete as a promise to your future self', dek: 'You cannot bind someone who does not yet exist. And yet we ask employees to do exactly this. Three recent New Mexico decisions have begun to take this problem seriously.', author: 'David Richter', read: '11 min read', date: 'Mar 19, 2026' },
-    { cat: 'Litigation', title: 'The deposition is not the trial', dek: 'Discovery is not performance. The instinct to win every room costs clients more than silence ever could. On the discipline of strategic restraint when the record is running.', author: 'Jeremy Jones', read: '6 min read', date: 'Mar 12, 2026' },
-    { cat: 'Formation', title: 'What kind of thing is a corporation?', dek: 'Founders ask about LLCs and S-Corps. The real question underneath: what does it mean to create a legal person? Entity selection as a choice about the nature of collective action.', author: 'David Richter', read: '15 min read', date: 'Mar 05, 2026' },
-    { cat: 'Litigation', title: 'When private facts become public questions', dek: 'The subpoena arrives and suddenly your internal emails are evidence. The transformation is instantaneous and irreversible. A guide to the hours that matter most.', author: 'Jeremy Jones', read: '9 min read', date: 'Feb 26, 2026' }
+  const essays = [
+    { cat: 'Contracts', title: 'On the quiet violence of the boilerplate indemnity', dek: 'Every contract contains a paragraph nobody reads. It is almost always the paragraph that decides who wins when things fall apart. A short taxonomy of the clauses we\u2019ve learned to distrust.', author: 'David Richter', read: '8 min read', date: 'Apr 02, 2026' },
+    { cat: 'Employment', title: 'What the new non-compete rulings actually mean for New Mexico employers', dek: 'Three recent decisions have quietly rewritten the landscape. Most of what you\u2019ve read about them is wrong. Here is what to do on Monday morning \u2014 and what to stop doing immediately.', author: 'Jeremy Jones', read: '12 min read', date: 'Mar 27, 2026' },
+    { cat: 'Litigation', title: 'The deposition is not the trial', dek: 'A short meditation on why most litigators treat discovery as performance, and why that instinct costs their clients money. The case for strategic restraint in the room.', author: 'David Richter', read: '6 min read', date: 'Mar 19, 2026' },
+    { cat: 'Business', title: 'LLC, S-Corp, or something stranger: a founder\u2019s guide to entity selection', dek: 'The right answer is almost never the answer your CPA gives you first. A framework we\u2019ve refined over ten years of watching people choose badly.', author: 'Jeremy Jones', read: '15 min read', date: 'Mar 12, 2026' },
+    { cat: 'Litigation', title: 'Three things I wish every CEO knew before the first subpoena arrives', dek: 'The hours after a litigation hold is issued are the most expensive hours of your company\u2019s year. A short field guide for the founders we wish had called sooner.', author: 'David Richter', read: '9 min read', date: 'Mar 05, 2026' },
+    { cat: 'Formation', title: 'The operating agreement is the company', dek: 'Most founders treat it as paperwork. It is actually the constitution of everything they are about to build. Three clauses that matter more than the rest combined.', author: 'Jeremy Jones', read: '11 min read', date: 'Feb 26, 2026' }
   ];
 
   const list = document.getElementById('essayList');
@@ -1390,35 +1192,6 @@ footer {
     li.addEventListener('focus', activate);
     li.addEventListener('click', activate);
     li.tabIndex = 0;
-  });
-})();
-
-// Contact modal
-(function() {
-  const trigger = document.getElementById('contactTrigger');
-  const footerTriggers = document.querySelectorAll('.footer-contact-trigger');
-  const modal = document.getElementById('contactModal');
-  const closeBtn = modal.querySelector('.modal-close');
-
-  function openModal(e) {
-    e.preventDefault();
-    modal.classList.add('active');
-    document.body.style.overflow = 'hidden';
-  }
-
-  function closeModal() {
-    modal.classList.remove('active');
-    document.body.style.overflow = '';
-  }
-
-  trigger.addEventListener('click', openModal);
-  footerTriggers.forEach(t => t.addEventListener('click', openModal));
-  closeBtn.addEventListener('click', closeModal);
-  modal.addEventListener('click', function(e) {
-    if (e.target === modal) closeModal();
-  });
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape' && modal.classList.contains('active')) closeModal();
   });
 })();
 </script>
