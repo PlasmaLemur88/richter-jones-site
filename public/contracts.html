@@ -2,53 +2,21 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Retain Counsel — Richter Jones</title>
+<title>Contracts &amp; Business Agreements — Richter Jones</title>
+<meta name="description" content="Richter Jones drafts and negotiates contracts for New Mexico businesses — operating agreements, commercial contracts, and the transactional documents that determine how disputes get resolved before they start."
+<meta property="og:type" content="website">
+<meta property="og:title" content="Contracts &amp; Business Agreements — Richter Jones">
+<meta property="og:image" content="https://richter-jones-site.vercel.app/og-image.jpg">
+<meta property="og:description" content="Richter Jones drafts and negotiates contracts for New Mexico businesses — operating agreements, commercial contracts, and the transactional documents that determine how disputes get resolved before they start.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://richter-jones-site.vercel.app/og-image.jpg">>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
 <style>
-:root {
-  --paper: #F4EFE4;
-  --paper-dim: #EBE4D3;
-  --ink: #1A1714;
-  --ink-soft: #3A342D;
-  --ink-muted: #6B6156;
-  --oxblood: #6E1E28;
-  --rule: rgba(26, 23, 20, 0.12);
-}
-
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
-body {
-  font-family: 'Spectral', Georgia, serif;
-  background: var(--paper);
-  color: var(--ink);
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-  position: relative;
-}
-
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  opacity: 0.3;
-  mix-blend-mode: multiply;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0.1 0 0 0 0 0.09 0 0 0 0 0.08 0 0 0 0.08 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  z-index: 1;
-}
-
-.wrap {
-  max-width: 720px;
-  margin: 0 auto;
-  padding: 0 32px;
-  position: relative;
-  z-index: 2;
-}
-
 /* ============ PAGE HEADER ============ */
 .page-header {
   padding: 100px 0 72px;
@@ -71,38 +39,102 @@ body::before {
   line-height: 1.15;
   letter-spacing: -0.02em;
   color: var(--ink);
-  max-width: 520px;
+  max-width: 560px;
 }
-
-/* ============ INTRO ============ */
-.intro {
-  padding: 56px 0 0;
-}
-.intro p {
+.page-header .intro {
   font-family: 'Spectral', serif;
   font-weight: 300;
   font-size: 19px;
-  line-height: 1.6;
+  line-height: 1.65;
   color: var(--ink-soft);
   max-width: 580px;
+  margin-top: 32px;
+}
+
+/* ============ APPROACH ============ */
+.approach {
+  padding: 72px 0 0;
+}
+.approach p {
+  font-family: 'Spectral', serif;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--ink-soft);
+  margin-bottom: 28px;
+}
+.approach p:last-child { margin-bottom: 0; }
+
+/* ============ WHAT WE HANDLE ============ */
+.matters {
+  padding: 72px 0;
+  border-top: 1px solid var(--rule);
+  margin-top: 72px;
+}
+.matters-label {
+  font-family: 'Inter Tight', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  margin-bottom: 40px;
+}
+.matters-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+}
+.matter-item {
+  padding: 20px 0;
+  border-bottom: 1px solid var(--rule);
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+}
+.matter-item:nth-child(odd) {
+  padding-right: 40px;
+  border-right: 1px solid var(--rule);
+}
+.matter-item:nth-child(even) {
+  padding-left: 40px;
+}
+.matter-dash {
+  font-family: 'Inter Tight', sans-serif;
+  font-size: 10px;
+  color: var(--oxblood);
+  flex-shrink: 0;
+}
+.matter-text {
+  font-family: 'Spectral', serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: var(--ink-soft);
+  line-height: 1.45;
 }
 
 /* ============ FORM ============ */
 .inquiry {
-  padding: 64px 0 56px;
+  padding: 72px 0 56px;
 }
-
+.inquiry-label {
+  font-family: 'Inter Tight', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  margin-bottom: 40px;
+}
 .form-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 48px;
   margin-bottom: 48px;
 }
-
 .field {
   position: relative;
 }
-
 .field label {
   display: block;
   font-family: 'Inter Tight', sans-serif;
@@ -113,7 +145,6 @@ body::before {
   color: var(--ink-muted);
   margin-bottom: 12px;
 }
-
 .field input,
 .field textarea {
   width: 100%;
@@ -130,37 +161,31 @@ body::before {
   border-radius: 0;
   -webkit-appearance: none;
 }
-
 .field input:focus,
 .field textarea:focus {
   border-color: var(--oxblood);
 }
-
 .field input::placeholder,
 .field textarea::placeholder {
   color: rgba(107, 97, 86, 0.45);
   font-style: italic;
   font-weight: 300;
 }
-
 .field-full {
   margin-bottom: 48px;
 }
-
 .field textarea {
   resize: vertical;
   min-height: 140px;
   line-height: 1.55;
   font-weight: 300;
 }
-
 .form-footer {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
   gap: 40px;
 }
-
 .submit-btn {
   display: inline-flex;
   align-items: center;
@@ -188,7 +213,6 @@ body::before {
 .submit-btn:hover .arrow {
   transform: translateX(3px);
 }
-
 .form-disclaimer {
   font-family: 'Spectral', serif;
   font-style: italic;
@@ -211,13 +235,11 @@ body::before {
 .contact-info {
   padding: 56px 0 100px;
 }
-
 .contact-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 48px;
 }
-
 .contact-block .block-label {
   font-family: 'Inter Tight', sans-serif;
   font-size: 10px;
@@ -227,7 +249,6 @@ body::before {
   color: var(--ink-muted);
   margin-bottom: 14px;
 }
-
 .contact-block .block-value {
   font-family: 'Spectral', serif;
   font-weight: 400;
@@ -245,7 +266,6 @@ body::before {
   color: var(--oxblood);
   border-color: var(--oxblood);
 }
-
 .contact-block .block-note {
   font-family: 'Spectral', serif;
   font-style: italic;
@@ -257,62 +277,29 @@ body::before {
 
 /* ============ RESPONSIVE ============ */
 @media (max-width: 768px) {
-
-  .wrap { padding: 0 24px; }
-
   .page-header { padding: 72px 0 52px; }
   .page-header h1 { font-size: 36px; }
+  .page-header .intro { font-size: 17px; margin-top: 24px; }
 
-  .intro { padding: 40px 0 0; }
-  .intro p { font-size: 17px; }
+  .approach { padding: 56px 0 0; }
+  .approach p { font-size: 17px; }
 
-  .inquiry { padding: 48px 0 40px; }
+  .matters { padding: 56px 0; margin-top: 56px; }
+  .matters-grid { grid-template-columns: 1fr; }
+  .matter-item:nth-child(odd) { padding-right: 0; border-right: none; }
+  .matter-item:nth-child(even) { padding-left: 0; }
 
-  .form-row {
-    grid-template-columns: 1fr;
-    gap: 36px;
-    margin-bottom: 36px;
-  }
-
+  .inquiry { padding: 56px 0 40px; }
+  .form-row { grid-template-columns: 1fr; gap: 36px; margin-bottom: 36px; }
   .field-full { margin-bottom: 36px; }
-
-  .field input,
-  .field textarea {
-    font-size: 16px; /* prevents iOS zoom on focus */
-    padding: 12px 0;
-  }
-
+  .field input, .field textarea { font-size: 16px; padding: 12px 0; }
   .field textarea { min-height: 120px; }
-
   .form-
-
-  .submit-btn {
-    width: 100%;
-    justify-content: center;
-    padding: 16px 28px;
-    min-height: 48px;
-  }
-
+  .submit-btn { width: 100%; justify-content: center; padding: 16px 28px; min-height: 48px; }
   .form-disclaimer { max-width: 100%; }
 
-  .divider { margin: 0 24px; }
-
   .contact-info { padding: 40px 0 72px; }
-
-  .contact-grid {
-    grid-template-columns: 1fr;
-    gap: 36px;
-  }
-
-  .contact-block .block-value a {
-    display: inline-block;
-    padding: 4px 0;
-  }
-
-  .contact-block + .contact-block {
-    padding-top: 36px;
-    border-top: 1px solid var(--rule);
-  }
+  .contact-grid { grid-template-columns: 1fr; gap: 36px; }
 }
 
 @media (max-width: 420px) {
@@ -320,22 +307,12 @@ body::before {
   .page-header h1 { font-size: 30px; }
   .page-header .label { font-size: 10px; }
 }
-
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { animation: none !important; transition: none !important; }
-}
 </style>
 <link rel="stylesheet" href="/nav.css?v=2">
 <link rel="stylesheet" href="/footer.css?v=2">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Retain Counsel — Richter Jones">
-<meta property="og:image" content="https://richter-jones-site.vercel.app/og-image.jpg">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://richter-jones-site.vercel.app/og-image.jpg">
 </head>
 <body>
 
-<!-- NAV -->
 <nav class="site-nav">
   <div class="nav-inner">
     <a href="/" class="nav-wordmark">
@@ -345,29 +322,71 @@ body::before {
     <ul>
       <li><a href="/essays" class="navlink">Essays</a></li>
       <li><a href="/counsel.html" class="navlink">Counsel</a></li>
-      <li><a href="/practice.html" class="navlink">Practice</a></li>
+      <li><a href="/practice.html" class="navlink active">Practice</a></li>
     </ul>
   </div>
 </nav>
 
-<!-- PAGE HEADER -->
 <header class="page-header">
   <div class="wrap">
-    <div class="label">Retain Counsel</div>
-    <h1>For matters requiring representation</h1>
+    <div class="label">Contracts &amp; Business Agreements</div>
+    <h1>Agreements that hold because they were built to hold.</h1>
+    <p class="intro">Jeremy R. Jones drafts and negotiates commercial agreements for New Mexico businesses at every stage — from a first operating agreement to a multi-party acquisition. The work is not filling in templates. It is understanding what the parties actually need, where the risks live, and drafting language that will still make sense when things do not go according to plan.</p>
   </div>
 </header>
 
-<!-- INTRO -->
-<div class="intro">
+<section class="approach">
   <div class="wrap">
-    <p>We accept new matters in commercial litigation, contract disputes, employment law, and business formation throughout New Mexico. Describe your situation briefly and we will follow up within one business day.</p>
+    <p>Most contract disputes are not about interpretation. They are about things that were not written down clearly enough when the relationship was good. The indemnification clause seemed unimportant. The definition of "material breach" felt obvious. The remedy provision was borrowed from another deal. And then something went wrong, and the parties discovered that their agreement was not the agreement they thought they had made.</p>
+    <p>Jeremy R. Jones practices contract law with that failure mode in mind. The drafting process is a discipline of identifying risk allocation before anyone has a reason to care about it. Who bears the loss if the supplier fails to deliver? What triggers the right to terminate, and what happens to the deposits when it does? What does "reasonable efforts" mean in a provision that actually matters? These are not pedantic questions. They are the questions that determine the outcome of disputes that have not happened yet.</p>
+    <p>Operating agreements receive particular attention. They govern what happens when partners disagree, when an owner wants out, when someone dies, and when the business faces a liquidity event. A well-drafted operating agreement does not just describe the structure — it anticipates the friction points and provides mechanisms to navigate them without litigation. A poorly drafted one turns a business dispute into a personal one, and a personal one into an expensive lawsuit.</p>
+    <p>We handle the full range of commercial agreements: vendor contracts, services agreements, NDAs, licensing arrangements, real estate purchase contracts, and the more complex documents that accompany mergers, acquisitions, and financing rounds. We review incoming agreements too — the ones presented by the other side, where the drafting was done by someone whose client is not you. Before you sign something that will govern a material relationship, you should know what you are signing.</p>
   </div>
-</div>
+</section>
 
-<!-- FORM -->
+<section class="matters">
+  <div class="wrap">
+    <div class="matters-label">What we handle</div>
+    <div class="matters-grid">
+      <div class="matter-item">
+        <span class="matter-dash">—</span>
+        <span class="matter-text">LLC and partnership operating agreements</span>
+      </div>
+      <div class="matter-item">
+        <span class="matter-dash">—</span>
+        <span class="matter-text">Commercial services and vendor agreements</span>
+      </div>
+      <div class="matter-item">
+        <span class="matter-dash">—</span>
+        <span class="matter-text">Non-disclosure and confidentiality agreements</span>
+      </div>
+      <div class="matter-item">
+        <span class="matter-dash">—</span>
+        <span class="matter-text">Asset purchase and business sale agreements</span>
+      </div>
+      <div class="matter-item">
+        <span class="matter-dash">—</span>
+        <span class="matter-text">Real estate purchase contracts and lease agreements</span>
+      </div>
+      <div class="matter-item">
+        <span class="matter-dash">—</span>
+        <span class="matter-text">Licensing and intellectual property agreements</span>
+      </div>
+      <div class="matter-item">
+        <span class="matter-dash">—</span>
+        <span class="matter-text">Contract review and negotiation for incoming agreements</span>
+      </div>
+      <div class="matter-item">
+        <span class="matter-dash">—</span>
+        <span class="matter-text">Contract amendment and workout agreements</span>
+      </div>
+    </div>
+  </div>
+</section>
+
 <div class="inquiry">
   <div class="wrap">
+    <div class="inquiry-label">Start a conversation</div>
     <form onsubmit="event.preventDefault()">
       <div class="form-row">
         <div class="field">
@@ -379,12 +398,10 @@ body::before {
           <input type="email" id="email" placeholder="you@company.com" autocomplete="email">
         </div>
       </div>
-
       <div class="field field-full">
         <label for="message">Describe your situation</label>
         <textarea id="message" placeholder="Tell us briefly what you're facing. We will follow up to discuss details."></textarea>
       </div>
-
       <div class="form-footer">
         <button type="submit" class="submit-btn">
           Submit inquiry
@@ -398,7 +415,6 @@ body::before {
 
 <hr class="divider" style="max-width: 720px; margin: 0 auto;">
 
-<!-- CONTACT INFO -->
 <div class="contact-info">
   <div class="wrap">
     <div class="contact-grid">
@@ -427,7 +443,6 @@ body::before {
   </div>
 </div>
 
-<!-- FOOTER -->
 <footer>
   <div class="footer-quote">
     <div class="footer-inner">

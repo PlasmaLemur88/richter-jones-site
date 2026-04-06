@@ -810,14 +810,14 @@ footer {
   transition: opacity 0.22s ease, transform 0.22s ease;
 }
 
-/* ============ WRITERS — minimal colophon ============ */
+/* ============ WRITERS — horizontal photo + bio ============ */
 .writers-block {
   padding: 90px 0 100px;
   border-top: 1px solid var(--rule);
 }
 .writers-head {
   padding-bottom: 20px;
-  margin-bottom: 48px;
+  margin-bottom: 64px;
   border-bottom: 1px solid var(--rule);
 }
 .writers-head h2 {
@@ -831,45 +831,67 @@ footer {
 .writers-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 64px;
+  gap: 72px;
+  align-items: stretch;
 }
-.writer h3 {
+.writer {
+  display: flex;
+  gap: 28px;
+  align-items: stretch;
+}
+.writer-photo {
+  width: 150px;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  display: block;
+  flex-shrink: 0;
+  align-self: flex-start;
+  border-top: 3px solid var(--oxblood);
+}
+.writer-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+.writer-info h3 {
   font-family: 'Spectral', serif;
   font-weight: 400;
-  font-size: 32px;
-  line-height: 1.1;
+  font-size: 30px;
+  line-height: 1.05;
   letter-spacing: -0.018em;
   color: var(--ink);
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 .writer-role {
   font-family: 'Inter Tight', sans-serif;
   font-size: 10px;
   font-weight: 600;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--oxblood);
-  margin-bottom: 18px;
+  margin-bottom: 20px;
 }
 .writer-bio {
   font-family: 'Spectral', serif;
   font-weight: 300;
-  font-size: 17px;
-  line-height: 1.55;
+  font-size: 16px;
+  line-height: 1.6;
   color: var(--ink-soft);
-  margin-bottom: 20px;
-  max-width: 440px;
+  margin-bottom: 24px;
 }
 .writer-archive {
+  margin-top: auto;
+  align-self: flex-start;
   font-family: 'Inter Tight', sans-serif;
   font-size: 11px;
   font-weight: 600;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--ink);
   text-decoration: none;
-  border-bottom: 1px solid var(--ink);
-  padding-bottom: 2px;
+  border-bottom: 1.5px solid var(--ink);
+  padding-bottom: 3px;
   transition: color 0.2s, border-color 0.2s;
 }
 .writer-archive:hover {
@@ -883,8 +905,9 @@ footer {
   .preview { position: static; order: -1; padding-bottom: 40px; border-bottom: 1px solid var(--rule); margin-bottom: 8px; }
   .preview-title { font-size: 30px; }
   .preview-dek { font-size: 17px; }
-  .writers-grid { grid-template-columns: 1fr; gap: 48px; }
-  .writer h3 { font-size: 28px; }
+  .writers-grid { grid-template-columns: 1fr; gap: 56px; }
+  .writer-photo { width: 140px; }
+  .writer-info h3 { font-size: 28px; }
 }
 
 @media (max-width: 820px) {
@@ -1066,18 +1089,25 @@ footer {
       <h2>The Writers</h2>
     </div>
     <div class="writers-grid">
-      <div class="writer">
-        <h3>David Richter</h3>
-        <div class="writer-role">Partner &middot; Litigation</div>
-        <p class="writer-bio">Commercial disputes, deposition craft, and the practice of strategic restraint. Fifteen years in courtrooms.</p>
-        <a href="#" class="writer-archive">23 essays &rarr;</a>
-      </div>
-      <div class="writer">
-        <h3>Jeremy Jones</h3>
-        <div class="writer-role">Partner &middot; Transactional</div>
-        <p class="writer-bio">Contracts, entity formation, and the architecture of closely-held companies. Counsel from the garage stage to the exit.</p>
-        <a href="#" class="writer-archive">18 essays &rarr;</a>
-      </div>
+      <article class="writer">
+        <img src="david-duotone.png" alt="David Richter" class="writer-photo">
+        <div class="writer-info">
+          <h3>David Richter</h3>
+          <div class="writer-role">Partner &middot; Litigation</div>
+          <p class="writer-bio">Commercial disputes, appellate advocacy, and the discipline of strategic restraint. Fifteen years representing clients in New Mexico state and federal courts.</p>
+          <a href="#" class="writer-archive">23 essays &rarr;</a>
+        </div>
+      </article>
+
+      <article class="writer">
+        <img src="jeremy-duotone.png" alt="Jeremy Jones" class="writer-photo">
+        <div class="writer-info">
+          <h3>Jeremy Jones</h3>
+          <div class="writer-role">Partner &middot; Transactional</div>
+          <p class="writer-bio">Transactional counsel for closely-held businesses. Entity formation, operating agreements, and the contractual architecture that precedes growth.</p>
+          <a href="#" class="writer-archive">18 essays &rarr;</a>
+        </div>
+      </article>
     </div>
   </div>
 </section>

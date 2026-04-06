@@ -1,0 +1,219 @@
+/* ============ SHARED FOOTER ============ */
+/* This file is the single source of truth for footer styles across all pages. */
+
+footer {
+  margin-top: 80px;
+  background: #1A1714;
+  color: #F4EFE4;
+  position: relative;
+  z-index: 2;
+}
+
+/* Quote section */
+.footer-quote {
+  padding: 90px 0 80px;
+  text-align: center;
+  border-bottom: 1px solid rgba(244, 239, 228, 0.1);
+}
+.footer-quote .footer-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+.footer-quote p {
+  font-family: 'Spectral', serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(20px, 2.6vw, 28px);
+  line-height: 1.45;
+  color: #F4EFE4;
+  max-width: 640px;
+  margin: 0 auto;
+  letter-spacing: -0.005em;
+  opacity: 0.9;
+}
+.footer-quote cite {
+  display: block;
+  margin-top: 22px;
+  font-family: 'Inter Tight', sans-serif;
+  font-style: normal;
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(244, 239, 228, 0.4);
+}
+
+/* Bottom section */
+.footer-bottom {
+  padding: 60px 0 40px;
+}
+.footer-bottom .footer-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+/* Grid */
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.8fr 1fr 1fr 1fr 1.3fr;
+  gap: 36px;
+  padding-bottom: 48px;
+  border-bottom: 1px solid rgba(244, 239, 228, 0.12);
+}
+
+/* Brand column */
+.footer-grid .footer-brand-col a.footer-wordmark {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #F4EFE4;
+  text-decoration: none;
+  font-family: 'Spectral', serif;
+  font-weight: 500;
+  font-size: 18px;
+  letter-spacing: 0.01em;
+  margin-bottom: 16px;
+}
+.footer-grid .footer-brand-col a.footer-wordmark img {
+  height: 22px;
+  width: auto;
+  display: block;
+}
+.footer-grid .footer-brand-col > p {
+  font-family: 'Spectral', serif;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 1.55;
+  color: rgba(244, 239, 228, 0.55);
+  max-width: 320px;
+}
+
+/* Column headers */
+.footer-grid h5 {
+  font-family: 'Inter Tight', sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(244, 239, 228, 0.4);
+  margin-bottom: 18px;
+}
+
+/* Links */
+.footer-grid ul { list-style: none; margin: 0; padding: 0; }
+.footer-grid li { margin-bottom: 10px; }
+.footer-grid a {
+  color: rgba(244, 239, 228, 0.75);
+  text-decoration: none;
+  font-family: 'Spectral', serif;
+  font-size: 14px;
+  font-weight: 300;
+  transition: color 0.2s;
+}
+.footer-grid a:hover { color: #F4EFE4; }
+
+/* Subscribe column */
+.footer-subscribe p {
+  font-family: 'Spectral', serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: 14px;
+  color: rgba(244, 239, 228, 0.6);
+  margin-bottom: 16px;
+}
+.footer-sub-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  color: rgba(244, 239, 228, 0.75) !important;
+  font-family: 'Spectral', serif;
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  text-decoration: none !important;
+  white-space: nowrap;
+  transition: color 0.2s;
+}
+.footer-sub-btn:hover { color: #F4EFE4 !important; }
+.footer-sub-btn img {
+  width: 16px;
+  height: 16px;
+}
+
+/* Legal */
+.footer-legal {
+  padding-top: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Inter Tight', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: rgba(244, 239, 228, 0.35);
+}
+.footer-legal p { max-width: 620px; line-height: 1.5; margin: 0; }
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 820px) {
+  footer { margin-top: 60px; }
+  .footer-quote { padding: 48px 0 40px; }
+  .footer-quote .footer-inner { padding: 0 24px; }
+  .footer-quote p { font-size: 18px; }
+  .footer-quote cite { font-size: 9px; margin-top: 16px; }
+  .footer-bottom { padding: 40px 0 32px; }
+  .footer-bottom .footer-inner { padding: 0 24px; }
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+    text-align: center;
+  }
+
+  /* Brand - centered, full width */
+  .footer-grid .footer-brand-col {
+    text-align: center;
+    padding-bottom: 32px;
+    border-bottom: 1px solid rgba(244, 239, 228, 0.08);
+    margin-bottom: 32px;
+  }
+  .footer-grid .footer-brand-col a.footer-wordmark {
+    justify-content: center;
+    margin-bottom: 14px;
+  }
+  .footer-grid .footer-brand-col > p {
+    max-width: 300px;
+    margin: 0 auto;
+    font-size: 13px;
+  }
+
+  /* Firm + Contact centered */
+  .footer-grid > div:nth-child(2),
+  .footer-grid > div:nth-child(3) {
+    text-align: center;
+    padding-bottom: 28px;
+  }
+
+  .footer-grid h5 { font-size: 9px; margin-bottom: 12px; }
+  .footer-grid a { font-size: 13px; }
+  .footer-grid li { margin-bottom: 8px; }
+
+  /* Subscribe - centered, full width */
+  .footer-subscribe {
+    text-align: center;
+    padding-top: 32px;
+    border-top: 1px solid rgba(244, 239, 228, 0.08);
+    margin-top: 32px;
+  }
+  .footer-subscribe p { font-size: 13px; }
+
+  /* Legal */
+  .footer-legal {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+    padding-top: 24px;
+  }
+  .footer-legal p { max-width: 100%; font-size: 10px; }
+}
